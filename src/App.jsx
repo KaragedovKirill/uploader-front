@@ -37,9 +37,14 @@ class App extends React.Component {
   };
 
   render() {
+    const { fileInfo } = this.state; 
     return (
       <div className="App">
         <Uploader onChange={this.onChange} />
+        <br />
+        <br />
+        {fileInfo && <img src={fileInfo.imageUrl} style={{width: '100px'}} alt="" />}
+        {fileInfo &&  <div>image is available at {fileInfo.imageUrl} </div>}
       </div>
     );
   }
